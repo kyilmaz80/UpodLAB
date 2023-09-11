@@ -18,4 +18,16 @@ public enum VehicleType {
     public String getErrorMessage() {
         return errorMessage;
     }
+
+    public static VehicleType fromString(String type) {
+        if (type.equalsIgnoreCase("Car")) {
+            return VehicleType.CAR;
+        } else if (type.equalsIgnoreCase("Van")) {
+            return VehicleType.VAN;
+        } else if (type.equalsIgnoreCase("Truck")) {
+            return VehicleType.TRUCK;
+        } else {
+            return null;
+        }
+    }
 }

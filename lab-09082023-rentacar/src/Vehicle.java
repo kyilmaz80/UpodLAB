@@ -1,7 +1,8 @@
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.UUID;
 
-public abstract class Vehicle {
+public abstract class Vehicle implements Serializable {
     private final String vehicleId;
     private int year;
     private String brand;
@@ -100,6 +101,11 @@ public abstract class Vehicle {
 
     public BigDecimal getTotalPrice() {
         return totalPrice;
+    }
+
+    @Override
+    public String toString() {
+        return "id: " + this.getVehicleId() + " type: " + this.getVehicleType().name();
     }
 
     public void setTotalPrice(BigDecimal totalPrice) {
